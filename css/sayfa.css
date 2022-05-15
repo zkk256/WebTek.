@@ -1,0 +1,18 @@
+.govde {
+	border-width: 5px;
+	text-align: center;
+	border-color: lightgray;
+	border-bottom-style: solid;
+	border-top-style: solid;
+        }
+
+.resim {
+	text-align: center;
+	}
+
+.sol {
+	text-align: left;
+	font-weight: bold;
+	}
+
+
