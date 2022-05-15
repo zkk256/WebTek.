@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF8-general-ci">
+    <title>İletişim</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/sayfa.css">
+
+    <script>
+        function isValid(form){
+            var adi = form.adi.value;
+            var soyad = form.soyad.value;
+            var email = form.email.value;
+            var message = form.message.value;
+            
+            if(adi == null || adi == "" || adi.length < 3)
+                {
+                    alert("İsim 3 karakterden az olamaz.");
+                    return false;
+                }
+            
+            if(soyad == null || soyad == "" || soyad.length < 2)
+                {
+                    alert("Soyad 2 karakterden az olamaz.");
+                    return false;
+                }
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(!(email.match(mailformat)))
+{
+alert("Yanlış bir mail adresi girdiniz");
+return false;
+}
+            
+            
+            
+            if (message == null || message == "" || message.length < 10)
+                {
+                    alert("Mesaj en az 10 karakter içermelidir.");
+                    return false;
+                }
+}
+
+    </script>
+
+
+</head>
+<body>
+    <nav class="navbar navbar-light" style="background-color: lightseagreen;">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="btn btn-outline-light" aria-current="page" href="index.html">Hakkımda</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-outline-light" href="sehrim.html">Şehrim</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-outline-light" href="login.html">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-outline-light" href="iletisim.html">İletişim</a>
+            </li>
+        </ul>
+        <br />
+    </nav>
+    
+
+
+    <div class="govde">
+        <section>
+            <div class="container-fluid col-sm-6">
+                <form action="php/iletisim.php" onsubmit="return isValid(this)" method="POST"> 
+                    <div class="form-group">
+                        <label for=isim><b>İsim</b></label> 
+                       <input type="text" name="adi" class="form-control" placeholder="İsim Giriniz">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="soyad"><b>Soyad</b></label>
+                        <input type="text" name="soyad" class="form-control" placeholder="Soyad Giriniz">                
+                     </div> 
+                     <div class = "form-group">
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" name="email" class="form-control" placeholder="Email Giriniz">    
+                    </div>
+                    <div class="form-group sol">
+                        <label for="cinsiyet"><b>Cinsiyet</b></label>
+                        
+                        <input type = "radio" name="cinsiyet" value="ERKEK" checked>ERKEK
+                        <input type = "radio" name="cinsiyet" value="KADIN">KADIN
+                    </div>
+                    <div class="form-group sol" >
+                        <b>YABANCI DİLLER:</b>
+                    <br>
+                        <input type = "checkbox" name="ingilizce" value="İngilizce">İngilizce <br>
+                        <input type = "checkbox" name="almanca" value="Almanca">Almanca<br>
+                        <input type = "checkbox" name="fransizca" value="Fransızca">Fransızca<br>
+                        <input type = "checkbox" name="cince" value ="Çince">Çince<br>
+                        <input type = "checkbox" name="diger" value="DİGER">Diğer<br>
+                    </div>
+                    <div class="form-group sol">
+                        YAŞADIĞI İL:
+                        
+                        <select name="sehir">
+                        <option value="-">ŞEHİR SEÇİNİZ</option>
+                        <option value="SAKARYA">SAKARYA</option>
+                        <option value="İSTANBUL">İSTANBUL</option>
+                        <option value="ANKARA">ANKARA</option>
+                        <option value="İZMİR">İZMİR</option>
+                        <option value="ADANA">ADANA</option>
+                        <option value="ANTALYA">ANTALYA</option>
+                        <option value="BURSA">BURSA</option>
+                        <option value="KAYSERİ">KAYSERİ</option>
+                        <option value="KAHRAMANMARAŞ" >KAHRAMANMARAŞ</option>
+                        </select>
+                    </div>
+                <br>
+                    <div class="form-group container-fluid sol">
+                        <textarea name="message" cols="30" rows="5" placeholder="Mesajınızı giriniz"></textarea>
+                     </div>
+                     <div class="form-group sol">
+                     DOSYA SEÇ:
+                     <br>
+                        <input type = "file" name="dosya" multiple >
+                    </div>
+                <br>
+                    <div class="form-group sol">
+                        <input name="gonder" type = "submit" value="GÖNDER">
+                        <input type = "reset" value="TEMİZLE">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

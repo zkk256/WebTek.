@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF8-general-ci">
+    <title>Login</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/sayfa.css">
+    <script src="js/login.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-light" style="background-color: lightseagreen;">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="btn btn-outline-light" aria-current="page" href="index.html">Hakkımda</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-outline-light" href="sehrim.html">Şehrim</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-outline-light" href="login.html">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-outline-light" href="iletisim.html">İletişim</a>
+            </li>
+        </ul>
+        <br />
+    </nav>
+
+    <div class="govde">
+        <div class="container-fluid" style="width:50%">
+            <form action="php/login.php" method="POST">
+                <div class="col-sm-12">
+                    <br />
+                    <p>Email adresi</p>
+                    <input type="email" class="form-control" name="kullaniciAdi" id="kullaniciAdi"  placeholder="b201210071@sakarya.edu.tr" required>
+                </div>
+                <div class="col-sm-12">
+                    <br />
+                    <p>Şifre</p>
+                    <input type="password" class="form-control" name="parola" id="parola" placeholder="b201210071" required>
+                </div>
+                <br />
+                <button type="submit" class="btn btn-primary col-sm-12">Giriş</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
